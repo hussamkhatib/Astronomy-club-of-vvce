@@ -1,6 +1,18 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
-
+img{
+  display: block;
+  width: 100%;
+}
+.logo{
+  margin-left: -5px;
+  width: 120%;
+  padding-top: var(--font-micro-size); 
+}
+/*li:last-child{
+  position: absolute;
+  bottom: 0;
+}*/
 .root {
   position: relative;
   z-index: 100;
@@ -30,7 +42,7 @@
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        color: var(--color-dark-blue);
       }
     }
   }
@@ -50,8 +62,8 @@
     display: block;
     fill: inherit;
   }
-
-  @media (--media-min-small) {
+ 
+  @media (--media-min-large) {
     display: none;
   }
 }
@@ -62,29 +74,32 @@
   @nest & ul {
     margin: 0;
     padding: 0;
-  }
+  } 
 
   @nest & ul li a {
     display: block;
     color: inherit;
     text-decoration: none;
-  }
+  } 
 
   @media (hover: hover) {
     @nest & ul li a:hover {
-      color: var(--color-accent);
+      color: var(--color-dark-blue);
     }
   }
 
-  @media (--media-max-small) {
+  @media (--media-max-middle) {
     position: absolute;
-    background: var(--color-white);
-    color: var(--color-black);
+    background: var(--color-pink);
+    color: var(--color-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     left: 0;
     right: 0;
     top: 4.3rem;
-
+    
+  @nest & img{
+    display: none;
+  }
     @nest & ul {
       padding: 1rem 0;
     }
@@ -94,17 +109,26 @@
     }
   }
 
-  @media (--media-min-small) {
+  @media (--media-min-large) {
+    margin: 0;
     display: block;
-
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 4rem; 
+    height: 100%;
+    background: linear-gradient(180deg, #BA4F94 0%, rgba(186, 79, 148, 0) 100%);
+    color: var(--color-white);
     @nest & ul {
+
       list-style: none;
       display: flex;
-      justify-content: flex-end;
+      flex-direction: column;
+    
     }
-
+      
     @nest & ul li a {
-      padding: 0.5rem;
+      padding: .5rem;
     }
   }
 }
