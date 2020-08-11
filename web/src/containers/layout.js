@@ -27,11 +27,12 @@ function LayoutContainer (props) {
             'Missing "Site settings". Open the Studio at http://localhost:3333 and some content in "Site settings"'
           )
         }
+        //   siteTitle={data.site.title}
         return (
           <Layout
             {...props}
             showNav={showNav}
-            siteTitle={data.site.title}
+         
             onHideNav={handleHideNav}
             onShowNav={handleShowNav}
           />

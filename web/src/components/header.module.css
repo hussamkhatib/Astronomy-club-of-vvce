@@ -2,17 +2,12 @@
 @import '../styles/custom-properties.css';
 img{
   display: block;
-  width: 100%;
 }
 .logo{
   margin-left: -5px;
   width: 120%;
   padding-top: var(--font-micro-size); 
 }
-/*li:last-child{
-  position: absolute;
-  bottom: 0;
-}*/
 .root {
   position: relative;
   z-index: 100;
@@ -117,18 +112,21 @@ img{
     top: 0;
     width: 4rem; 
     height: 100%;
-    background: linear-gradient(180deg, #BA4F94 0%, rgba(186, 79, 148, 0) 100%);
+    background: linear-gradient(180deg, #FF57A8 0%, rgba(186, 79, 148, 0) 100%);
+    /*background: linear-gradient(180deg, #BA4F94 0%, rgba(186, 79, 148, 0) 100%);*/
     color: var(--color-white);
     @nest & ul {
 
       list-style: none;
-      display: flex;
-      flex-direction: column;
     
     }
       
     @nest & ul li a {
       padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

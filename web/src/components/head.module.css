@@ -1,0 +1,49 @@
+@import '../styles/custom-media.css';
+.h1{
+  max-width: 75%;    
+  letter-spacing: 0.05em;
+  font-size: 2.2rem;
+  margin : 0; 
+  line-height: 1.25;
+@media (--media-max-middle){
+  max-width: 100%;
+  margin: -3rem 0 0 0;
+}
+ 
+  @media (--media-max-small){
+    
+    font-size: 1.304rem;
+  }
+}
+
+.h3{
+  color: #ff57a8;
+  margin: 0;  
+  @media (--media-max-small){
+  font-size: 0.75rem;
+}
+}
+
+.p{
+  max-width: 100%;
+  font-size: 1.1rem;
+  padding: 1rem 0; 
+  @media (--media-min-large){
+    padding: 3rem 0;
+    font-size: 1.5rem;
+    max-width: 65%;
+}
+}
+.abc{
+    position: absolute;
+    right: -2.2em;  
+    top: -1.25em;
+    z-index: -1;
+    width:550px;
+    height:550px;
+
+@media (--media-max-middle){
+    display: none;
+
+}
+}

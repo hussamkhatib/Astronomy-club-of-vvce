@@ -10,6 +10,8 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import img from '../components/icon/astro.svg'
+import styles from '../components/head.module.css'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -89,14 +91,21 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
+  
+    <Layout  >
+
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <h1 className={styles.h1}> {site.title}</h1>
+        <h3 className={styles.h3}>{site.description}</h3>
+        <img src={img} className={styles.abc} />
+        <p className={styles.p}>
+        To Honour the contributions of the Missile Man of India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
+        </p>
         {postNodes && (
           <BlogPostPreviewList
             title='Latest blog posts'
