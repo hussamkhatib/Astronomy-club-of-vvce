@@ -100,7 +100,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <h1 className={styles.h1}> {site.title}</h1>
+        <h1 className={styles.h1}> {site.title}</h1> 
         <h3 className={styles.h3}>{site.description}</h3>
         <img src={img} className={styles.abc} />
         <p className={styles.p}>
