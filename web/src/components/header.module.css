@@ -156,3 +156,6 @@ img{
 .showNav {
   display: block;
 }
+svg:hover{
+  fill: pink;
+}
