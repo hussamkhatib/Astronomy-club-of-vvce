@@ -16,11 +16,6 @@ export default {
             source: 'title',
             maxLength: 96
         }
-    },{
-        
-            name: 'mainImage',
-            type: 'mainImage',
-            title: 'Main image'
     }
     ] 
 }
