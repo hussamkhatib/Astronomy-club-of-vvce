@@ -1,3 +1,4 @@
+
 export default {
     name:  'team',
     type: 'document',
