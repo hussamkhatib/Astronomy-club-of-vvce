@@ -1,0 +1,60 @@
+@import '../styles/custom-media.css';
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    @media (--media-min-medium){
+    margin-left: 4rem;
+    }
+}
+
+input ,textarea{
+    display: block;
+    width: 38rem;
+    border: 2px groove hotpink;
+    @media (--media-max-medium) {
+       width: 80vw; 
+    }
+}
+textarea{
+    height:15rem;
+    border: 2px groove salmon;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none
+}
+input{
+    height:1.7rem;
+    border: 2px groove hotpink;
+}
+label{
+    padding: 1rem;
+    
+}
+span{
+    background-color: hotpink;
+    padding-top: 0.5rem;
+    padding-bottom: .4rem;
+    font-size:1.5rem ;
+    /* text-align: start; */
+}
+ .btn{
+        border-radius: 7px;
+        height: 1.5rem;
+        width: 18%;
+        color: hotpink;
+        margin-bottom:2%;
+    
+}
+input:focus { 
+    transition: box-shadow .45s, border-color .45s ease-in-out;
+    outline:none;
+    border: 2px groove transparent;
+}
+textarea:focus{
+    outline: none;
+    border: 2px groove #000;
+    border-radius: 7px;
+}

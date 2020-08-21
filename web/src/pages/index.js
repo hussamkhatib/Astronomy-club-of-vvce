@@ -12,6 +12,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import img from '../components/icon/astro.svg'
 import styles from '../components/head.module.css'
+import Contact from '../components/contact'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -92,7 +93,7 @@ const IndexPage = props => {
 
   return (
   
-    <Layout  >
+    <Layout  >  
 
       <SEO
         title={site.title}
@@ -113,7 +114,9 @@ const IndexPage = props => {
             browseMoreHref='/archive/'
           />
         )}
+        <Contact />
       </Container>
+      
     </Layout>
   )
 }

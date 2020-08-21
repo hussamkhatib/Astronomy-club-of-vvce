@@ -49,7 +49,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
               News</Link>
           </li>
           <li>
-          <Link to='/archive/'>
+          <Link to='/'>
           <img src={team}></img>  
             Team</Link>
           </li>
@@ -60,7 +60,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
          Blog</Link>
           </li>
           <li>
-          <Link to='/archive/'>
+          <Link to='/contact'>
           <img src={astronaut}></img>
             Contact</Link>
           </li>

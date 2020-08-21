@@ -11,7 +11,14 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug',
+      _title: 'Slug',
+      //changed it
+      get title() {
+        return this._title;
+      },
+      set title(value) {
+        this._title = value;
+      },
       description: 'Some frontends will require a slug to be set to be able to show the person',
       options: {
         source: 'name',
