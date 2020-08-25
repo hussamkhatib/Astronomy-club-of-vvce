@@ -43,10 +43,9 @@ span{
  .btn{
         border-radius: 7px;
         height: 1.5rem;
-        width: 18%;
         color: hotpink;
         margin-bottom:2%;
-    
+     
 }
 input:focus { 
     transition: box-shadow .45s, border-color .45s ease-in-out;

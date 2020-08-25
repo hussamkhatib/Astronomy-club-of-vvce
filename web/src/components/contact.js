@@ -10,15 +10,15 @@ const Contact = () => {
   <h2>Contact us</h2>
   <label>
     <span>Your Name</span>
-    <input type="text" name="name" id="name" />
+    <input type="text" name="name" id="name" required/>
   </label>
   <label>
     <span>Your Email</span>
-    <input type="email" name="email" id="email" />
+    <input type="email" name="email" id="email" required/>
   </label>
   <label>
     <span>Message</span>
-    <textarea name="message" id="message" rows="5" />
+    <textarea name="message" id="message" rows="5" required/>
   </label>
   <button className={styles.btn} type="submit">okay, send</button>
   {/* <input type="reset" value="Clear" /> */}

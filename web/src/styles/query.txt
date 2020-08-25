@@ -1,0 +1,17 @@
+ query ($slug:String){
+    sanityTeam(slug: {current:{eq: $slug}}){
+      slug{
+        current
+      } 
+      name
+      branch                                                      const {data, errors} = props
+                                                                 const { name,branch } = data.sanityTeam
+      image{
+        alt
+        asset{
+          url
+        }
+      }
+    }
+  }
+`

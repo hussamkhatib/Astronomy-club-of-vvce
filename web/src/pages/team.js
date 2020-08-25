@@ -4,18 +4,40 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import {buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
 
 import {responsiveTitle1} from '../components/typography.module.css'
 import TeamMember from '../components/team-member'
 
-//export const query = graphql`
- // query TeamPageQuery {
-   
-//`
+export const query = graphql`
+{
+  allSanityTeam{
+    edges{
+      node{
+        name
+        branch
+        role
+        slug{
+          current
+        }
+        image{
+          alt
+          asset{
+            _id
+            url
+          }
+        }
+      }
+    }
+  }
+}
+`
 
   const teamPage = props => {
   const {data, errors} = props
-//  const { title } = data.sanityTeam
+  const {edges} = data.allSanityTeam 
+  //const { name,branch } = data.sanityTeam
   if (errors) {
     return (
       <Layout>
@@ -34,7 +56,26 @@ import TeamMember from '../components/team-member'
      <TeamMember 
       title='Team Members'
      />
+      {edges.map(team =>(
+        <div>
+           <p> {team.node.name} </p>
+           <p> {team.node.role} </p>
+           <img src = {imageUrlFor(buildImageObj(team.node.image))
+           .height(100)
+           .width(100)
+           .fit('crop')
+           .url()} />
+
+    
+        </div>
+      ))}
        
+       
+       
+       
+       {/* <p> {node.name}    </p> */}
+       {/* <p> {node.branch}  </p> */}
+        {/* <img src ={data.sanityTeam.edges.node.image.asset.url} /> */}
       </Container>
     </Layout>
   )
