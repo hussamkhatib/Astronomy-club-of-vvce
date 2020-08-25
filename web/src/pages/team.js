@@ -6,18 +6,16 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 import {responsiveTitle1} from '../components/typography.module.css'
+import TeamMember from '../components/team-member'
 
-export const query = graphql`
-  query TeamPageQuery {
-    sanityTeam(slug: {current: {eq: "team"}}) {
-          title
-        }
-      }
-`
+//export const query = graphql`
+ // query TeamPageQuery {
+   
+//`
 
-const teamPage = props => {
+  const teamPage = props => {
   const {data, errors} = props
-  const { title } = data.sanityTeam
+//  const { title } = data.sanityTeam
   if (errors) {
     return (
       <Layout>
@@ -30,10 +28,13 @@ const teamPage = props => {
 
   return (
     <Layout>
-      <SEO title= {title} />
+      {/* <SEO title={} /> */}
+
       <Container>
-  <h1 className={responsiveTitle1}> {title} </h1>
-        <pre>{JSON.stringify(data,null, 2)}</pre>
+     <TeamMember 
+      title='Team Members'
+     />
+       
       </Container>
     </Layout>
   )
