@@ -101,7 +101,6 @@ img{
       
   }
   }
-
   @media (--media-max-medium) {
     position: absolute;
     /* background: linear-gradient(180deg, #FF57A8 0%, rgba(186, 79, 148, 0) 100%); */
@@ -128,7 +127,16 @@ img{
       
     }
   }
+  /*@media (--media-max-small){
+    @nest & ul {
+      padding: 0;
+    }
 
+    @nest & ul li a {
+      padding: 0;
+      
+    }
+  }*/
   @media (--media-min-medium) {
     margin: 0;
     display: block;

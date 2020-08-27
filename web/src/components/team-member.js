@@ -1,6 +1,7 @@
 import React from 'react'
 import { imageUrlFor } from '../lib/image-url'
 
+
 function TeamMember (props) {
     return (
         <div>

@@ -9,6 +9,7 @@ import {imageUrlFor} from '../lib/image-url'
 
 import {responsiveTitle1} from '../components/typography.module.css'
 import TeamMember from '../components/team-member'
+import styles from '../components/team.module.css'
 
 export const query = graphql`
 {
@@ -56,20 +57,21 @@ export const query = graphql`
      <TeamMember 
       title='Team Members'
      />
+     <div className={styles.parent}>
       {edges.map(team =>(
-        <div>
-           <p> {team.node.name} </p>
-           <p> {team.node.role} </p>
+        <div >
+          
            <img src = {imageUrlFor(buildImageObj(team.node.image))
            .height(100)
            .width(100)
            .fit('crop')
            .url()} />
-
+           <p> {team.node.name} </p>
+           <p> {team.node.role} </p>
     
         </div>
       ))}
-       
+       </div>
        
        
        

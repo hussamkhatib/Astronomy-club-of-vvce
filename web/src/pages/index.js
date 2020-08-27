@@ -107,13 +107,13 @@ const IndexPage = props => {
         <p className={styles.p}>
         To Honour the contributions of the Missile Man of India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
         </p>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
+        {/* {postNodes && ( */}
+          {/* <BlogPostPreviewList */}
+            {/* title='Latest blog posts' */}
+            {/* nodes={postNodes} */}
+            {/* browseMoreHref='/archive/' */}
+          {/* /> */}
+        {/* )} */}
         <Contact />
       </Container>
       
