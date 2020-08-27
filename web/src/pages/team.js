@@ -61,13 +61,14 @@ export const query = graphql`
       {edges.map(team =>(
         <div >
           
-           <img src = {imageUrlFor(buildImageObj(team.node.image))
-           .height(100)
-           .width(100)
+           <img className={styles.image} 
+           src = {imageUrlFor(buildImageObj(team.node.image))
+           .height(130)
+           .width(130)
            .fit('crop')
            .url()} />
            <p> {team.node.name} </p>
-           <p> {team.node.role} </p>
+        
     
         </div>
       ))}

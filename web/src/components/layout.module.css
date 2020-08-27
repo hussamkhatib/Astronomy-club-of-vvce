@@ -9,9 +9,9 @@
     min-height: calc(100% - 91px - 155px);
   }
 }
-
+ 
 .footer {
-  border-top: 1px solid var(--color-very-light-gray);
+  border-top: 1px solid var(--color-pink);
 
   @nest & a {
     color: inherit;
@@ -32,7 +32,7 @@
   margin: 0 auto;
 
   @media (--media-min-small) {
-    padding: 6em 2em 2em;
+    padding: 6em 2em 2em; 
   }
 }
 

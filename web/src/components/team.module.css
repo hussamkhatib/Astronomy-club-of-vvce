@@ -1,4 +1,9 @@
 .parent {
     display: flex;
     flex-direction: row;
+    overflow-x: hidden;
+}
+.image{
+    border-radius: 25%;
+    padding:0 .5rem;
 }
