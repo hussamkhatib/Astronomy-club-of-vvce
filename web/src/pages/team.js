@@ -53,22 +53,23 @@ export const query = graphql`
     <Layout>
       {/* <SEO title={} /> */}
 
-      <Container>
+      
      <TeamMember 
       title='Team Members'
      />
+  
      <div className={styles.parent}>
       {edges.map(team =>(
         <div >
           
            <img className={styles.image} 
            src = {imageUrlFor(buildImageObj(team.node.image))
-           .height(130)
-           .width(130)
+           .height(140)
+           .width(140)
            .fit('crop')
            .url()} />
-           <p> {team.node.name} </p>
-        
+           <h5 className={styles.h5}> {team.node.name} </h5>
+           <h6 className={styles.h6}> {team.node.role} </h6>
     
         </div>
       ))}
@@ -79,7 +80,7 @@ export const query = graphql`
        {/* <p> {node.name}    </p> */}
        {/* <p> {node.branch}  </p> */}
         {/* <img src ={data.sanityTeam.edges.node.image.asset.url} /> */}
-      </Container>
+    
     </Layout>
   )
 }

@@ -1,9 +1,39 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+body{
+ scrollbar-width: none;
+}
 .parent {
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    -ms-overflow-style:none;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0;
+}
+.parent::-webkit-scrollbar{
+    display:none; 
 }
 .image{
-    border-radius: 25%;
+    border-radius: 20%;
     padding:0 .5rem;
+    
 }
+  .parent::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .h5{
+    margin:.5em  0.75em 0;
+    padding: 0;
+    font-size: 1.2em;
+    color: var(--color-pink);
+  }
+  .h6{
+    margin: 0em 1em;
+    padding: 0;
+    font-size: .8em;
+    color: var(--color-accent);
+  }
+  
