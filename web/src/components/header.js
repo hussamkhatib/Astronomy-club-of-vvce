@@ -49,7 +49,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
               News</Link>
           </li>
           <li>
-          <Link to='/'>
+          <Link to='/team'>
           <img src={team}></img>  
            Team</Link>
           </li>

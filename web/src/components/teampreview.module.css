@@ -1,0 +1,23 @@
+@import '../styles/custom-media.css';
+/* @import '../styles/custom-properties.css'; */
+.root{
+
+}
+.list{
+    list-style: none;
+    @media (--media-max-small){
+    display: flex;
+    flex-direction: row;   
+    -ms-overflow-style:none;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0;
+    }
+  
+}
+.list::-webkit-scrollbar{
+    display:none; 
+}
+
+  

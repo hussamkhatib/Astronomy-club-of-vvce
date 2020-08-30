@@ -38,7 +38,6 @@ export const query = graphql`
   const teamPage = props => {
   const {data, errors} = props
   const {edges} = data.allSanityTeam 
-  //const { name,branch } = data.sanityTeam
   if (errors) {
     return (
       <Layout>
@@ -54,13 +53,11 @@ export const query = graphql`
       {/* <SEO title={} /> */}
 
       
-     <TeamMember 
-      title='Team Members'
-     />
-  
+     <TeamMember />
+{/*   
      <div className={styles.parent}>
       {edges.map(team =>(
-        <div >
+        <div key={team.node.slug.current}>
           
            <img className={styles.image} 
            src = {imageUrlFor(buildImageObj(team.node.image))
@@ -73,14 +70,9 @@ export const query = graphql`
     
         </div>
       ))}
-       </div>
+       </div> */}
        
-       
-       
-       {/* <p> {node.name}    </p> */}
-       {/* <p> {node.branch}  </p> */}
-        {/* <img src ={data.sanityTeam.edges.node.image.asset.url} /> */}
-    
+ 
     </Layout>
   )
 }

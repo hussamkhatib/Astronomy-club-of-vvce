@@ -11,8 +11,10 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import img from '../components/icon/astro.svg'
-import styles from '../components/head.module.css'
 import Contact from '../components/contact'
+import TeamPreview from '../components/teampreview'
+
+import styles from '../components/head.module.css'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -36,12 +38,31 @@ export const query = graphql`
       _id
     }
   }
-
+  
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
+    }
+    team: allSanityTeam{
+      edges{
+        node{
+          name
+          branch
+          role
+          slug{
+            current
+          }
+          image{
+            alt
+            asset{
+              _id
+              url
+            }
+          }
+        }
+      }
     }
     posts: allSanityPost(
       limit: 6
@@ -69,7 +90,6 @@ export const query = graphql`
 
 const IndexPage = props => {
   const {data, errors} = props
-
   if (errors) {
     return (
       <Layout>
@@ -84,6 +104,7 @@ const IndexPage = props => {
       .filter(filterOutDocsWithoutSlugs)
       .filter(filterOutDocsPublishedInTheFuture)
     : []
+    const teamNodes = data && data.team && mapEdgesToNodes(data.team)
 
   if (!site) {
     throw new Error(
@@ -107,16 +128,23 @@ const IndexPage = props => {
         <p className={styles.p}>
         To Honour the contributions of the Missile Man of India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
         </p>
-        {/* {postNodes && ( */}
-          {/* <BlogPostPreviewList */}
-            {/* title='Latest blog posts' */}
-            {/* nodes={postNodes} */}
-            {/* browseMoreHref='/archive/' */}
-          {/* /> */}
-        {/* )} */}
-        <Contact />
-      </Container>
+        {postNodes && (
+          <BlogPostPreviewList
+            title='Latest blog posts'
+            nodes={postNodes}
+            browseMoreHref='/archive/'
+          />
+        )}
       
+      </Container>
+      {
+        teamNodes && (
+          <TeamPreview 
+          nodes = {teamNodes}
+          />
+        )
+      }
+      <Contact />
     </Layout>
   )
 }
