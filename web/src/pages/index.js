@@ -1,5 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import  { useState, useEffect } from 'react'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -15,6 +16,7 @@ import Contact from '../components/contact'
 import TeamPreview from '../components/teampreview'
 
 import styles from '../components/head.module.css'
+import Pagination from '../components/pagination'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -97,20 +99,37 @@ const IndexPage = props => {
       </Layout>
     )
   }
-
+/**
+ * blog 
+ */
   const site = (data || {}).site
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
       .filter(filterOutDocsWithoutSlugs)
       .filter(filterOutDocsPublishedInTheFuture)
     : []
-    const teamNodes = data && data.team && mapEdgesToNodes(data.team)
+ 
 
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     )
   }
+
+ /**
+  * team
+  */
+    
+ const teamNodes = data && data.team && mapEdgesToNodes(data.team)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(8);
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = teamNodes.slice(indexOfFirstPost, indexOfLastPost);
+  
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
   
@@ -140,10 +159,15 @@ const IndexPage = props => {
       {
         teamNodes && (
           <TeamPreview 
-          nodes = {teamNodes}
+          nodes = {currentPosts}
           />
         )
       }
+          <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={teamNodes.length}
+        paginate = {paginate}
+      />
       <Contact />
     </Layout>
   )

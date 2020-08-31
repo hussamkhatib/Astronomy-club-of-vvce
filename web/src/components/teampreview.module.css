@@ -5,7 +5,7 @@
 }
 .list{
     list-style: none;
-    @media (--media-max-small){
+    /*@media (--media-max-small){*/
     display: flex;
     flex-direction: row;   
     -ms-overflow-style:none;
@@ -13,7 +13,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding: 0;
-    }
+   /* }*/
   
 }
 .list::-webkit-scrollbar{

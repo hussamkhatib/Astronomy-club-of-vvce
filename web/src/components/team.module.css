@@ -4,7 +4,7 @@
 .image{
     border-radius: 20%;
     padding:0 .5rem;
-    filter: sepia(75%) hue-rotate(282deg) grayscale(50%) brightness(0.9) contrast(120%);
+   /* filter: sepia(75%) hue-rotate(282deg) grayscale(50%) brightness(0.9) contrast(120%); */
 }
  
   .h5{
