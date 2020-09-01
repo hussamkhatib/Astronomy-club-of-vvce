@@ -16,7 +16,6 @@ import Contact from '../components/contact'
 import TeamPreview from '../components/teampreview'
 
 import styles from '../components/head.module.css'
-import Pagination from '../components/pagination'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -155,20 +154,20 @@ const IndexPage = props => {
           />
         )}
       
-      </Container>
       {
         teamNodes && (
           <TeamPreview 
           nodes = {currentPosts}
+          postsPerPage={postsPerPage}
+          totalPosts={teamNodes.length}
+          paginate = {paginate}
           />
         )
-      }
-          <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={teamNodes.length}
-        paginate = {paginate}
-      />
+      } 
+       
       <Contact />
+      </Container>
+
     </Layout>
   )
 }

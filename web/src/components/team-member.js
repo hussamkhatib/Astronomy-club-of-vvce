@@ -7,11 +7,11 @@ function TeamMember (props) {
     return (
         <div className={styles.parent}>
         { props.image && props.image.asset && ( <div key={props.slug.current}>
-          
+           
            <img className={styles.image} 
            src = {imageUrlFor(buildImageObj(props.image))
            .height(140)
-           .width(140)
+           .width(120)
            .fit('crop')
            .url()} />
            <h5 className={styles.h5}> {props.name} </h5>

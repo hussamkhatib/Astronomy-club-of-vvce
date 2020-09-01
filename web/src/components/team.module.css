@@ -2,21 +2,24 @@
 @import '../styles/custom-properties.css';
 
 .image{
-    border-radius: 20%;
+
     padding:0 .5rem;
    /* filter: sepia(75%) hue-rotate(282deg) grayscale(50%) brightness(0.9) contrast(120%); */
+   @media (--media-max-small){
+    border-radius: 20%;
+   }
 }
  
   .h5{
     margin:.5em  0.75em 0;
     padding: 0;
     font-size: 1.2em;
-    color: var(--color-pink);
+    color: var(--color-pink); 
   }
   .h6{
     margin: 0em 1em;
     padding: 0;
-    font-size: .8em;
+    font-size: .7em;
     color: var(--color-accent);
   }
   

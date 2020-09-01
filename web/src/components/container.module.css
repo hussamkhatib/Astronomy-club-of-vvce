@@ -2,12 +2,12 @@
 
 .root {
   box-sizing: border-box;
- max-width: 960px; 
+  max-width: 960px; 
   padding: 1.5em; 
-  margin: 0 auto;
 
+  
   @media (--media-min-small) {
     padding: 2em;
-  
+    margin:0 auto ;
   }
 }
