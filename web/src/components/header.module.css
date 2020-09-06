@@ -150,8 +150,6 @@ img{
     /*background: linear-gradient(180deg, #BA4F94 0%, rgba(186, 79, 148, 0) 100%);*/
     color: var(--color-white);
     @nest & ul {
-
-      list-style: none;
     
     }
       

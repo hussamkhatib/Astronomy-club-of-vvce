@@ -121,15 +121,23 @@ const IndexPage = props => {
     
  const teamNodes = data && data.team && mapEdgesToNodes(data.team)
   const [currentPage, setCurrentPage] = useState(1);
+ const [currentImage,setCurrentImage] = useState(0)
+
   const [postsPerPage] = useState(8);
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = teamNodes.slice(indexOfFirstPost, indexOfLastPost);
-  
+  //
+  const indexImage = currentImage
+  const bigImage = teamNodes.slice(indexImage,indexImage+1)
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
-
+  //console.log(index)
+  const paginate = pageNumber => {
+    //setCurrentImage(indexOfFirstPost)
+    setCurrentPage(pageNumber)
+  };
+  const switchImage = image =>  setCurrentImage(image);
   return (
   
     <Layout  >  
@@ -153,20 +161,24 @@ const IndexPage = props => {
             browseMoreHref='/archive/'
           />
         )}
-      
+          </Container>
+    
       {
         teamNodes && (
-          <TeamPreview 
+          <TeamPreview
           nodes = {currentPosts}
           postsPerPage={postsPerPage}
-          totalPosts={teamNodes.length}
+          totalPosts={teamNodes.length} 
+          singleNode ={bigImage}
           paginate = {paginate}
+          switchImage = {switchImage}
+    
           />
         )
       } 
-       
+
       <Contact />
-      </Container>
+  
 
     </Layout>
   )

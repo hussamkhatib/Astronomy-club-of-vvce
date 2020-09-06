@@ -19,3 +19,6 @@ body > div,
 body > div > div {
   height: 100%;
 }
+li{
+  list-style-type: none;
+}

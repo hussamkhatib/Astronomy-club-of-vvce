@@ -5,21 +5,21 @@ import {buildImageObj} from '../lib/helpers'
 
 function TeamMember (props) {
     return (
-        <div className={styles.parent}>
+        <>
         { props.image && props.image.asset && ( <div key={props.slug.current}>
            
            <img className={styles.image} 
            src = {imageUrlFor(buildImageObj(props.image))
-           .height(140)
-           .width(120)
+           .height(props.height)
+           .width(props.width)
            .fit('crop')
            .url()} />
            <h5 className={styles.h5}> {props.name} </h5>
            <h6 className={styles.h6}> {props.role} </h6>
 
-        </div>)}
-  
-        </div>
+        </div>)} 
+   
+        </>
     )
 }
 

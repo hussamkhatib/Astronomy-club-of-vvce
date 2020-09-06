@@ -1,7 +1,7 @@
 import React from 'react'
 import TeamMember from './team-member'
 import styles from './teampreview.module.css'
-import punith from './icon/punithsagar.png'
+
 
 const TeamPreview =  props => {
   const pageNumbers = [];
@@ -10,13 +10,26 @@ const TeamPreview =  props => {
       pageNumbers.push(i);
   }
   
-    return ( 
-    <div className={styles.root}>
-       <img className={styles.temp} src={punith} alt= 'alt'/>
-       {/*  nav */}
-        <ul className={styles.aaa}>
+    return (  
+    <div className={styles.rootelem}>
+       
+       <div className={styles.currentimage}>
+        <ul>
+        {props.singleNode &&
+          props.singleNode.map((node) => (
+            <li key={node.name}> 
+              <TeamMember height="280" width="200"
+              {...node} />
+              </li>
+          ))}
+  
+          </ul>  
+        </div>
+        
+        <ul className={styles.listnav}>
       {pageNumbers.map(number => (
-        <li  onClick={() => props.paginate(number)} key={number}>
+        <li className={styles.none} onClick={() => {props.paginate(number)
+        }} key={number}>
         </li>
       ))}
     </ul>
@@ -25,10 +38,11 @@ const TeamPreview =  props => {
            {/* images */}
          <div className={styles.wrapper}>   
             <ul className={styles.list}>
-        {props.nodes &&
-          props.nodes.map((node,index) => (
-            <li key={node.name} className={`div${index+1}`}>
-              <TeamMember {...node} />
+        {props.nodes && props.nodes.map((node,index) => (
+ //
+            <li  onClick={() => props.switchImage(index)}
+            key={node.name} className={`div${index+1}`}>
+              <TeamMember height="120" width="100" {...node} />
             </li>
           ))}   
           </ul>      

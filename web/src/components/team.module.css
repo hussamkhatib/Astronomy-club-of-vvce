@@ -2,10 +2,12 @@
 @import '../styles/custom-properties.css';
 
 .image{
-
-    padding:0 .5rem;
+ /* box-sizing: border-box; */
+ height: 100%;
+ width: auto;
+    /* padding:0 .5rem; */
    /* filter: sepia(75%) hue-rotate(282deg) grayscale(50%) brightness(0.9) contrast(120%); */
-   @media (--media-max-small){
+   @media (--media-max-medium){
     border-radius: 20%;
    }
 }
@@ -23,3 +25,8 @@
     color: var(--color-accent);
   }
   
+.h5,.h6{
+  @media (--media-min-medium){
+  display: none;
+  }
+}
