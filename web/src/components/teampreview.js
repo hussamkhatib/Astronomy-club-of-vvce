@@ -22,13 +22,12 @@ const TeamPreview =  props => {
               {...node} />
               </li>
           ))}
-  
           </ul>  
         </div>
         
-        <ul className={styles.listnav}>
+    <ul className={styles.listnav}>
       {pageNumbers.map(number => (
-        <li className={styles.none} onClick={() => {props.paginate(number)
+       <li className={styles.none} onClick={() => {props.paginate(number)
         }} key={number}>
         </li>
       ))}
@@ -40,7 +39,7 @@ const TeamPreview =  props => {
             <ul className={styles.list}>
         {props.nodes && props.nodes.map((node,index) => (
  //
-            <li  onClick={() => props.switchImage(index)}
+            <li onClick={() => props.switchImage(index)}
             key={node.name} className={`div${index+1}`}>
               <TeamMember height="120" width="100" {...node} />
             </li>

@@ -123,20 +123,20 @@ const IndexPage = props => {
   const [currentPage, setCurrentPage] = useState(1);
  const [currentImage,setCurrentImage] = useState(0)
 
-  const [postsPerPage] = useState(8);
+  const [postsPerPage] = useState(4);
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = teamNodes.slice(indexOfFirstPost, indexOfLastPost);
   //
   const indexImage = currentImage
-  const bigImage = teamNodes.slice(indexImage,indexImage+1)
+  const bigImage = currentPosts.slice(indexImage,indexImage+1)
   // Change page
-  //console.log(index)
+ console.log("indexF"+indexOfFirstPost,"indexL"+indexOfLastPost)
   const paginate = pageNumber => {
-    //setCurrentImage(indexOfFirstPost)
+    setCurrentImage(0)
     setCurrentPage(pageNumber)
-  };
+  };  
   const switchImage = image =>  setCurrentImage(image);
   return (
   
@@ -152,7 +152,7 @@ const IndexPage = props => {
         <h3 className={styles.h3}>{site.description}</h3>
         <img src={img} className={styles.abc} />
         <p className={styles.p}>
-        To Honour the contributions of the Missile Man of India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
+        To Honour the contributions of the Missile Man o  f India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
         </p>
         {postNodes && (
           <BlogPostPreviewList
@@ -172,7 +172,7 @@ const IndexPage = props => {
           singleNode ={bigImage}
           paginate = {paginate}
           switchImage = {switchImage}
-    
+
           />
         )
       } 

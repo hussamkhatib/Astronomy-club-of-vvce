@@ -6,8 +6,9 @@ import {buildImageObj} from '../lib/helpers'
 function TeamMember (props) {
     return (
         <>
-        { props.image && props.image.asset && ( <div key={props.slug.current}>
-           
+        { props.image && props.image.asset && ( 
+        <div className={styles.teams}
+         key={props.slug.current}>   
            <img className={styles.image} 
            src = {imageUrlFor(buildImageObj(props.image))
            .height(props.height)
