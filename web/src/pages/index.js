@@ -61,12 +61,28 @@ export const query = graphql`
               _id
               url
             }
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot{
+               _key
+        _type
+        x
+        y
+        height
+        width
+            }
           }
         }
       }
     }
     posts: allSanityPost(
-      limit: 6
+      limit: 2
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -123,7 +139,7 @@ const IndexPage = props => {
   const [currentPage, setCurrentPage] = useState(1);
  const [currentImage,setCurrentImage] = useState(0)
 
-  const [postsPerPage] = useState(4);
+  const [postsPerPage] = useState(8);
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

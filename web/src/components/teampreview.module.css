@@ -4,8 +4,8 @@
     @media (--media-min-medium){
     display: grid;
     justify-items: stretch; 
-    grid-template-columns: 1.3fr .4fr repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 20vw 4vw repeat(4, 12vw);
+    grid-template-rows: repeat(2, 10em);
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
     max-width: 960px;
