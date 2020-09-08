@@ -13,7 +13,7 @@ function BlogPostPreviewGrid (props) {
           props.nodes.map(node => (
             <li key={node.id}>
               <BlogPostPreview {...node} isInList />
-            </li>
+            </li> 
           ))}
       </ul>
       {props.browseMoreHref && (

@@ -2,7 +2,7 @@ import React from 'react'
 import { imageUrlFor } from '../lib/image-url'
 import styles from './team.module.css'
 import {buildImageObj} from '../lib/helpers'
-
+ 
 function TeamMember (props) {
     return (
         <>

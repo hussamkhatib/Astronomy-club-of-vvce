@@ -183,6 +183,7 @@ const IndexPage = props => {
         teamNodes && (
           <TeamPreview
           nodes = {currentPosts}
+          nodesMobile = {teamNodes}
           postsPerPage={postsPerPage}
           totalPosts={teamNodes.length} 
           singleNode ={bigImage}

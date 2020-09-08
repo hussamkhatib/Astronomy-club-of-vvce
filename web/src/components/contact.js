@@ -24,7 +24,7 @@ const Contact = () => {
   </label>
   {/* <div data-netlify-recaptcha="true"></div> */}
   {/* <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_KEY} /> */}
-  <button className={styles.btn} type="submit">okay, send</button>
+  <button className={styles.btn} type="submit">send</button>
 
   {/* <button type="reset" value="Clear" /> */}
 </form>

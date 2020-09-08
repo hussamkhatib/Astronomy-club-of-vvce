@@ -14,10 +14,6 @@
 }
 .currentimage{
     grid-area: 1 / 1 / 3 / 2;
-    
-    @media (--media-max-medium){
-        display: none;
-    }
 }
 
 .div1{grid-area: 1 / 3 / 2 / 4;}
@@ -64,7 +60,4 @@
     grid-area: 1 / 2 / 3 / 3;
     display: flex;
     flex-direction: column;
-      @media (--media-max-medium){
-    display: none;
-    }
 }
