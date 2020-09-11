@@ -70,7 +70,7 @@ img{
     display: block;
     fill: inherit;
   } 
- 
+  
   @media (--media-min-medium) {
     display: none;
   }
@@ -166,6 +166,6 @@ img{
 .showNav {
   display: block;
 }
-svg:hover{
+path:hover{
   fill: pink;
 }
