@@ -11,9 +11,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import img from '../components/icon/astro.svg'
-import Contact from '../components/contact'
-import TeamPreview from '../components/teampreview'
+import  Head from '../components/head'
 
 import styles from '../components/head.module.css'
 
@@ -164,39 +162,9 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <h1 className={styles.h1}> {site.title}</h1> 
-        <h3 className={styles.h3}>{site.description}</h3>
-        <img src={img} className={styles.abc} />
-        <p className={styles.p}>
-        To Honour the contributions of the Missile Man o  f India, The Dr. APJ Abdul Kalam Memorial Astronomical club of VVCE was formed in the year 2018. Our vision is to create interest among the engineering students about space , astronomy and make them understand the importance of engineering in the field of research and technology.
-        </p>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
+        <Head
+        subtitle={site.description} />
           </Container>
-    
-      {
-        teamNodes && (
-          <TeamPreview
-          nodes = {currentPosts}
-          nodesMobile = {teamNodes}
-          postsPerPage={postsPerPage}
-          totalPosts={teamNodes.length} 
-          singleNode ={bigImage}
-          paginate = {paginate}
-          switchImage = {switchImage}
-
-          />
-        )
-      } 
-
-      <Contact />
-  
-
     </Layout>
   )
 }

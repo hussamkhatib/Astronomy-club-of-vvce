@@ -11,7 +11,7 @@ const HamburgerIcon = () => (
     width='1em'
     height='1em'
   >
-    <path d='M5 7.5H20' stroke='currentColor' style={strokeStyle} />
+    <path d='M5 7.5H20' stroke=' #1B1E3F' style={strokeStyle} />
     <path d='M5 12.5H20' stroke='currentColor' style={strokeStyle} />
     <path d='M5 17.5H20' stroke='currentColor' style={strokeStyle} />
   </svg>
