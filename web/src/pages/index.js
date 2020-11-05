@@ -12,8 +12,10 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import  Head from '../components/head'
+import Latest from '../components/latest'
 
 import styles from '../components/head.module.css'
+
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -164,6 +166,7 @@ const IndexPage = props => {
       <Container>
         <Head
         subtitle={site.description} />
+        <Latest />
           </Container>
     </Layout>
   )

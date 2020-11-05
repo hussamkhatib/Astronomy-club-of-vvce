@@ -1,5 +1,10 @@
 @import './custom-properties.css';
 
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
 html {
   font-family: var(--font-family-sans);
   font-size: var(--font-base-size);
