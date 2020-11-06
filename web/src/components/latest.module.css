@@ -1,0 +1,28 @@
+.h2{
+    text-align: center;
+    padding: .4em;
+    margin: 2em 0;
+    background-color: #F1F5F6;
+    font-weight: 100;
+
+}
+.ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3em;
+}
+.img{
+ display: block;
+ width:100%;
+ height: fit-content;
+  background-size: cover;
+}
+ .li{
+display: flex;
+flex-direction: column;
+}
+
+.p{
+ padding:  1.2em 0; 
+ color: #1b1e3f;
+} 
