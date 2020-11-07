@@ -1,3 +1,7 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+
 .h2{
     text-align: center;
     padding: .4em;
@@ -10,19 +14,35 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3em;
+    @media (--media-max-small){
+        grid-template-columns:1fr;
+    }
 }
 .img{
  display: block;
  width:100%;
- height: fit-content;
+ height: auto;
   background-size: cover;
+  @media (--media-max-small){
+    height:60px;
+    width:auto;
+        }
 }
- .li{
+ .a{
 display: flex;
 flex-direction: column;
+@media (--media-max-small){
+    flex-direction:row;
+    padding: 0.5em;
+}
 }
 
 .p{
  padding:  1.2em 0; 
+ align-self: center;
  color: #1b1e3f;
+ @media (--media-max-small){
+    padding: 0 0 0 .5em;
+    font-size: .8em;
+}
 } 

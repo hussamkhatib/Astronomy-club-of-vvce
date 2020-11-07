@@ -34,7 +34,7 @@ const Latest = () => {
              return(
               <li key={item.id} className={styles.li}>
                 
-                <a href={item.url} target="_blank">
+                <a className={styles.a} href={item.url} target="_blank">
                   <img className={styles.img}
             src={item.imageUrl} height="150" width="150"/>
               
