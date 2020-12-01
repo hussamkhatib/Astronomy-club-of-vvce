@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './latest.module.css'
+import container from './container.module.css'
 
 const Latest = () => {
     const url = 'https://test.spaceflightnewsapi.net/api/v2/blogs?_limit=3'
@@ -27,7 +28,7 @@ const Latest = () => {
         return <div>Loading...</div>;
       } else {
         return (
-          <>
+          <div className={container.wrapper}>
              <h2 className={styles.h2}>Latest</h2>
           <ul className={styles.ul}>
             {items.map(item => {
@@ -45,7 +46,7 @@ const Latest = () => {
           })}
            
           </ul>
-          </>
+          </div>
         );
       }
     }

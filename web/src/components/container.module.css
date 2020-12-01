@@ -2,7 +2,11 @@
 
 .root {
   box-sizing: border-box;
-  max-width: 960px; 
+  display: grid;
+  grid-template-columns:
+  1fr
+  min(80ch, 100%)
+  1fr;
   padding: 1.5em; 
 
   
@@ -10,4 +14,12 @@
     padding: 2em;
     margin:0 auto ;
   }
+}
+
+.wrapper {
+  grid-column: 2;
+}
+.fullBleed {
+  width: 100%;
+  grid-column: 1 / -1;
 }

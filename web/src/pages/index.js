@@ -15,6 +15,7 @@ import  Head from '../components/head'
 import Latest from '../components/latest'
 
 import styles from '../components/head.module.css'
+import Tweet from '../components/tweet'
 
 
 export const query = graphql`
@@ -148,7 +149,7 @@ const IndexPage = props => {
   const indexImage = currentImage
   const bigImage = currentPosts.slice(indexImage,indexImage+1)
   // Change page
- console.log("indexF"+indexOfFirstPost,"indexL"+indexOfLastPost)
+
   const paginate = pageNumber => {
     setCurrentImage(0)
     setCurrentPage(pageNumber)
@@ -167,6 +168,7 @@ const IndexPage = props => {
         <Head
         subtitle={site.description} />
         <Latest />
+        <Tweet />
           </Container>
     </Layout>
   )

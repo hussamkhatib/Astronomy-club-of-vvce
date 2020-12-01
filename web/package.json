@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "gatsby-image": "^2.0.41",
+    "gatsby-plugin-twitter": "^2.5.0",
     "react-responsive": "^8.1.0"
   }
 }
