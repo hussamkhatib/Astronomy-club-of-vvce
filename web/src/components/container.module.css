@@ -7,17 +7,18 @@
   1fr
   min(80ch, 100%)
   1fr;
-  padding: 1.5em; 
-
+  /* padding: 1.5em;  */
+  
   
   @media (--media-min-small) {
-    padding: 2em;
+    /* padding: 2em; */
     margin:0 auto ;
   }
 }
 
 .wrapper {
   grid-column: 2;
+  padding: 1em;
 }
 .fullBleed {
   width: 100%;

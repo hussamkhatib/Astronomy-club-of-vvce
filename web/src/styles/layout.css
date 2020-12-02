@@ -17,6 +17,7 @@ body {
   /* background: var(--color-dark-blue); */
   color: #1B1E3F;
   margin: 0;
+  overflow-x: hidden;
 }
 
 html,

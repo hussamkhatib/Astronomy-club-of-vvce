@@ -1,19 +1,31 @@
+
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
-
+.wrapper{
+    background-color: #1B1E3F;
+    padding:1em;
+}
 .h2{
     text-align: center;
-    padding: .4em;
-    margin: 2em 0;
-    background-color: #F1F5F6;
-    font-weight: 100;
-
+    padding: .4em 1em;
+    margin: 1em auto;
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 700px;
+    font-size: 3em;
+    @media (--media-max-medium){
+        font-size: 1.6em;
+    }
 }
 .ul{
     display: grid;
+    
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3em;
+    max-width: 80ch;
+    padding: 0 1em;
+    margin : 0 auto;
     @media (--media-max-small){
         grid-template-columns:1fr;
     }
@@ -40,7 +52,7 @@ flex-direction: column;
 .p{
  padding:  1.2em 0; 
  align-self: center;
- color: #1b1e3f;
+ color: #fff;
  @media (--media-max-small){
     padding: 0 0 0 .5em;
     font-size: .8em;

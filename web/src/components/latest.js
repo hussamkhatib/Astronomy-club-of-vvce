@@ -4,7 +4,6 @@ import container from './container.module.css'
 
 const Latest = () => {
     const url = 'https://test.spaceflightnewsapi.net/api/v2/blogs?_limit=3'
-    const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
@@ -22,13 +21,11 @@ const Latest = () => {
             }
           )
       }, [])
-      if (error) {
-        return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
+     if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
         return (
-          <div className={container.wrapper}>
+          <div className={`${container.fullBleed} ${styles.wrapper}`}>
              <h2 className={styles.h2}>Latest</h2>
           <ul className={styles.ul}>
             {items.map(item => {

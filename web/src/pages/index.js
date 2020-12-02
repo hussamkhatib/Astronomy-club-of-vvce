@@ -157,7 +157,7 @@ const IndexPage = props => {
   const switchImage = image =>  setCurrentImage(image);
   return (
   
-    <Layout  >  
+    <Layout>  
 
       <SEO
         title={site.title}

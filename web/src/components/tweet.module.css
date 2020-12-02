@@ -1,3 +1,21 @@
-.wrapper {
- display: flex;   
+@import '../styles/custom-media.css';
+
+
+
+.wrapper{
+    display: grid;
+    grid-auto-flow: column;  
+    margin-top : 5em ; 
+    gap: 1em;
+    -ms-overflow-style:none;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom:4em ;
+    grid-auto-columns: 400px;
+    @media (--media-max-medium){
+        grid-auto-columns: 60vw;
+        margin-top: 5em ;
+   }
+  
 }

@@ -1,12 +1,12 @@
 @import '../styles/custom-media.css';
 .image{
  margin: 0 auto;
+ padding: 1em 0;
  display: block;
-  @media (--media-max-middle){
-  
   }
-  }
-
+ .wrapper{
+  background: #1B1E3F;
+ }
 .h1{
   max-width: 75%;    
   letter-spacing: 0.05em;
@@ -33,11 +33,17 @@
 }
 
 .p{
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: 55ch;
   font-size: 1.1rem;
-  padding: 1rem 0; 
+  padding: 1em; 
+  color: #fff;
   @media (--media-min-large){
     padding: 3rem 0;
     font-size: 1.5rem;
 }
+}
+
+.bkground {
+  background-color: #1B1E3F;
 }

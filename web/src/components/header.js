@@ -10,7 +10,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         <Icon symbol='hamburger' />
       </button>
-    
+     
      
      <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
