@@ -2,33 +2,19 @@
 @import '../styles/custom-properties.css';
 
 .image{
- /* box-sizing: border-box; */
- /* height: 100%;
- width: auto; */
-    /* padding:0 .5rem; */
-  
    @media (--media-max-medium){
-    border-radius: 20%;
    }
 }
  .teams{
-   padding: .7em;
  }
   .h5{
-    margin:.5em  0.75em 0;
     padding: 0;
     font-size: .9em;
     color: var(--color-pink); 
   }
   .h6{
-    margin: 0em 1em;
     padding: 0;
     font-size: .6em;
     color: var(--color-accent);
   }
   
-.h5,.h6{
-  @media (--media-min-medium){
-  display: none;
-  }
-}

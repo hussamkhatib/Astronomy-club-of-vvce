@@ -14,7 +14,6 @@ import Layout from '../containers/layout'
 import  Head from '../components/head'
 import Latest from '../components/latest'
 
-import styles from '../components/head.module.css'
 import Tweet from '../components/tweet'
 
 
@@ -132,29 +131,6 @@ const IndexPage = props => {
     )
   }
 
- /**
-  * team
-  */
-    
- const teamNodes = data && data.team && mapEdgesToNodes(data.team)
-  const [currentPage, setCurrentPage] = useState(1);
- const [currentImage,setCurrentImage] = useState(0)
-
-  const [postsPerPage] = useState(8);
-  // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = teamNodes.slice(indexOfFirstPost, indexOfLastPost);
-  //
-  const indexImage = currentImage
-  const bigImage = currentPosts.slice(indexImage,indexImage+1)
-  // Change page
-
-  const paginate = pageNumber => {
-    setCurrentImage(0)
-    setCurrentPage(pageNumber)
-  };  
-  const switchImage = image =>  setCurrentImage(image);
   return (
   
     <Layout>  
@@ -169,7 +145,7 @@ const IndexPage = props => {
         subtitle={site.description} />
         <Latest />
         <Tweet />
-          </Container>
+      </Container>
     </Layout>
   )
 }

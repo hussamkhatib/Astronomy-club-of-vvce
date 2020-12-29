@@ -9,7 +9,7 @@
 .h2{
     text-align: center;
     padding: .4em 1em;
-    margin: 1em auto;
+    margin: .5em auto;
     font-weight: 600;
     color: #ffffff;
     max-width: 700px;
@@ -19,8 +19,7 @@
     }
 }
 .ul{
-    display: grid;
-    
+    display: grid;   
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3em;
     max-width: 80ch;

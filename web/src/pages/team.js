@@ -1,19 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {graphql} from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-
-import {responsiveTitle1} from '../components/typography.module.css'
-import TeamMember from '../components/team-member'
-import styles from '../components/team.module.css'
+import {
+  mapEdgesToNodes,
+} from '../lib/helpers'
+import TeamPreview from '../components/teampreview'
 
 export const query = graphql`
 {
-  allSanityTeam{
+  team: allSanityTeam{
     edges{
       node{
         name
@@ -37,7 +35,7 @@ export const query = graphql`
 
   const teamPage = props => {
   const {data, errors} = props
-  const {edges} = data.allSanityTeam 
+//  const {edges} = data.team 
   if (errors) {
     return (
       <Layout>
@@ -47,31 +45,16 @@ export const query = graphql`
   }
 
  
+  const teamNodes = data && data.team && mapEdgesToNodes(data.team)
 
   return (
     <Layout>
       {/* <SEO title={} /> */}
 
       
-     <TeamMember />
-{/*   
-     <div className={styles.parent}>
-      {edges.map(team =>(
-        <div key={team.node.slug.current}>
-          
-           <img className={styles.image} 
-           src = {imageUrlFor(buildImageObj(team.node.image))
-           .height(140)
-           .width(140)
-           .fit('crop')
-           .url()} />
-           <h5 className={styles.h5}> {team.node.name} </h5>
-           <h6 className={styles.h6}> {team.node.role} </h6>
-    
-        </div>
-      ))}
-       </div> */}
-       
+     <TeamPreview
+          nodes={teamNodes} 
+     />
  
     </Layout>
   )

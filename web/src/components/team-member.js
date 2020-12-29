@@ -6,7 +6,7 @@ import {buildImageObj} from '../lib/helpers'
 function TeamMember (props) {
     return (
         <>
-        { props.image && props.image.asset && ( 
+        { props.image && ( 
         <div className={styles.teams}
          key={props.slug.current}>   
            <img className={styles.image} 
