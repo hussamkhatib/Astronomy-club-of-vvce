@@ -15,7 +15,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   /* background: var(--color-dark-blue); */
-  color: #1B1E3F;
+  color: var(--color-white);
   margin: 0;
   overflow-x: hidden;
 }

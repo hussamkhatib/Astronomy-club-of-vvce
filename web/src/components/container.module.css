@@ -1,7 +1,6 @@
 @import '../styles/custom-media.css';
 
 .root {
-  box-sizing: border-box;
   display: grid;
   grid-template-columns:
   1fr

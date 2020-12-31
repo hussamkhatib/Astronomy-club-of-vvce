@@ -6,10 +6,7 @@ import Container from '../components/container'
 const contact = () => {
     return (
       <Layout >
-        <Container >
-            <Contact />
-        </Container>
-
+            <Contact /> 
         </Layout>  
     )
 }

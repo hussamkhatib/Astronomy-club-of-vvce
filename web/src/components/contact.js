@@ -4,11 +4,12 @@ import styles from './contact.module.css'
 
 const Contact = () => {
   return (
+    <div className={styles.grid}>
     <form className={styles.parent} method='post' netlify-honeypot='bot-field' data-netlify='true' name='contact' data-netlify-recaptcha='true'>
 
       <input type='hidden' name='bot-field' />
       <input type='hidden' name='form-name' value='contact' />
-      <h2>Contact us</h2>
+      <h2 className={styles.title}>Contact us</h2>
       <label>
         <span>Your Name</span>
         <input type='text' name='name' id='name' required />
@@ -27,6 +28,7 @@ const Contact = () => {
 
       {/* <button type="reset" value="Clear" /> */}
     </form>
+    </div>
   )
 }
 
