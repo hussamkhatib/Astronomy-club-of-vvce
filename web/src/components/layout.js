@@ -40,6 +40,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
         <Link to="/" className={styles.a}>Events</Link>
         <Link to="/" className={styles.a}>Blog</Link>
         <Link to="/contact" className={styles.a}>Contact</Link>
+        <Link to="/team" className={styles.a}>Team</Link>                
       </nav>
       </div>
       <small>

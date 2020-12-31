@@ -50,12 +50,9 @@ export const query = graphql`
   return (
     <Layout>
       {/* <SEO title={} /> */}
-
-      
      <TeamPreview
           nodes={teamNodes} 
      />
- 
     </Layout>
   )
 }

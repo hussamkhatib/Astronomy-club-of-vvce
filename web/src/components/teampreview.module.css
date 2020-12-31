@@ -5,13 +5,33 @@
     display: grid;
     }
 }
+.wrapper{
+    background: #1B1E3F;
+    padding: 0 3em 3em 3em;
+    @media (--media-max-medium){
+    padding: 0 1.5em 1em 1.5em;
+    } 
+}
 
+.title{
+    padding: 1em 0;
+    color: var(--color-white);
+}
 
 .list{
+    margin: 0 auto;
     display: grid;
-    /* grid-auto-flow: column; */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template: 
+    235px 235px/repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2em;
     @media (--media-max-medium){
- 
    } 
+}
+.grid{
+position: relative;
+display: grid;
+background: #33386e;
+grid-template: 
+25px 160px 50px/
+1fr 160px 1fr;
 }

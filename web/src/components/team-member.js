@@ -6,20 +6,15 @@ import {buildImageObj} from '../lib/helpers'
 function TeamMember (props) {
     return (
         <>
-        { props.image && ( 
-        <div className={styles.teams}
-         key={props.slug.current}>   
-           <img className={styles.image} 
-           src = {imageUrlFor(buildImageObj(props.image))
-           .height(props.height)
-           .width(props.width)
-           .fit('crop')
-           .url()} />
-           <h5 className={styles.h5}> {props.name} </h5>
-           <h6 className={styles.h6}> {props.role} </h6>
-
-        </div>)} 
-   
+            <h5 className={styles.h5}> {props.name} </h5>
+            <h6 className={styles.h6}> {props.role} </h6>
+            <img 
+            className={styles.image} 
+            src = {imageUrlFor(buildImageObj(props.image))
+            .height(props.height)
+            .width(props.width)
+            .fit('crop')
+            .url()} />
         </>
     )
 }
