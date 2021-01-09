@@ -25,7 +25,6 @@ function BlogPost (props) {
           />
         </div>
       )}
-      <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
@@ -52,7 +51,6 @@ function BlogPost (props) {
             )}
           </aside>
         </div>
-      </Container>
     </article>
   )
 }

@@ -38,7 +38,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
         <h4 className={styles.navbarfooterHeader}>Quick links</h4>
         <Link to="/" className={styles.a}>Home</Link>
         <Link to="/" className={styles.a}>Events</Link>
-        <Link to="/" className={styles.a}>Blog</Link>
+        <Link to="/blog" className={styles.a}>Blog</Link>
         <Link to="/contact" className={styles.a}>Contact</Link>
         <Link to="/team" className={styles.a}>Team</Link>                
       </nav>

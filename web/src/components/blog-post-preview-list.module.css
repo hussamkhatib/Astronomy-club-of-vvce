@@ -6,6 +6,7 @@
 }
 
 .headline {
+  color: var(--color-dark-blue);
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
   font-weight: 600;
@@ -31,10 +32,10 @@
 
   @nest & a {
     display: inline-block;
-    padding: 0.5rem 0;
-    color: inherit;
+    padding: 0.5rem ;
+    color: var(--color-white);
     text-decoration: none;
-
+    background: var(--color-dark-blue);
     @media (hover: hover) {
       @nest &:hover {
         color: var(--color-accent);

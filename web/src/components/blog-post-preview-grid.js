@@ -16,11 +16,6 @@ function BlogPostPreviewGrid (props) {
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
-      )}
     </div>
   )
 }
@@ -28,7 +23,6 @@ function BlogPostPreviewGrid (props) {
 BlogPostPreviewGrid.defaultProps = {
   title: '',
   nodes: [],
-  browseMoreHref: ''
 }
 
 export default BlogPostPreviewGrid

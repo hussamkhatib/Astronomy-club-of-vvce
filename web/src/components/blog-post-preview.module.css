@@ -3,13 +3,12 @@
 
 .root {
   display: block;
-  color: inherit;
+  color: var(--color-dark-blue);
   text-decoration: none;
 }
 
 .inList {
   composes: root;
-
   @media (--media-min-medium) {
     display: grid;
     grid-template-columns: 1fr 2fr;
