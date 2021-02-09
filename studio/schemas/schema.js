@@ -10,7 +10,7 @@ import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
 import team from './documents/team'
-
+import eventDay from './documents/eventDay'
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
 import bioPortableText from './objects/bioPortableText'
@@ -25,6 +25,7 @@ export default createSchema({
     post,
     category,
     author,
+    eventDay,
     team,
     mainImage,
     authorReference,
