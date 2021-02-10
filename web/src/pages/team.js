@@ -1,12 +1,9 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {graphql} from 'gatsby'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {
-  mapEdgesToNodes,
-} from '../lib/helpers'
+import { mapEdgesToNodes } from '../lib/helpers'
 import TeamPreview from '../components/teampreview'
 
 export const query = graphql`

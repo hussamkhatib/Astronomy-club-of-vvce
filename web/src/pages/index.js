@@ -1,10 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import  { useState, useEffect } from 'react'
 import {
   mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -14,6 +11,7 @@ import  Head from '../components/head'
 import Latest from '../components/latest'
 
 import Tweet from '../components/tweet'
+import EventPreview from '../components/eventPreview'
 
 
 export const query = graphql`
@@ -23,7 +21,17 @@ export const query = graphql`
       description
       keywords
     }
+    event: allSanityEvent {
+      edges {
+        node {
+          title
+          eventDate
+          description
+        }
+      }
+    }
   }
+
 `
 
 const IndexPage = props => {
@@ -35,23 +43,16 @@ const IndexPage = props => {
       </Layout>
     )
   }
-/**
- * blog 
- */
-  const site = (data || {}).site
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
-    : []
- 
+  const eventNodes = data && data.event && mapEdgesToNodes(data.event)
 
- /* if (!site) {
+  const site = (data || {}).site 
+
+  if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     )
   }
-*/
+
   return (
   
     <Layout>  
@@ -64,8 +65,11 @@ const IndexPage = props => {
       <Container>
         <Head
         subtitle={site.description} />
-        <Latest />
-        <Tweet />
+        <EventPreview
+          nodes={eventNodes}
+        />
+         <Latest /> 
+        <Tweet /> 
       </Container>
     </Layout>
   )

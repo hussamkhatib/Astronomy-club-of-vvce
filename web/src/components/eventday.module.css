@@ -1,0 +1,43 @@
+.container{
+    grid-column: 1/-1;
+    padding: 1em;
+    display: inline-grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill,minmax(20em,1fr));
+    width: 100%;
+    margin: 3em 0;
+}
+.registercard{
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+}
+
+/**/
+.wrapper{
+    margin: 0 auto;
+}
+.title{
+    margin-bottom: .8rem;
+    font-size: 1.8em;
+}
+.time{
+    align-items: center;
+    display: flex;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: .03em;
+    margin-top: 1rem;
+}
+.desc{
+    padding: .8em 0;
+}
+.register{
+    background: #1B1E3F;
+    color: white;
+    padding:  1em 3em;
+    border-radius: 4em;
+    font-size: 0.8em;
+    transition: background .15s,color .15s;
+}
