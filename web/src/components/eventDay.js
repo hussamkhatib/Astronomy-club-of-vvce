@@ -1,8 +1,16 @@
+
 import React from 'react'
 import styles from './eventday.module.css'
 import Calendar from './icon/Calendar'
 
 const eventDay = props => {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+    const evDay = new Date(props.eventDate.replaceAll('-',','))
+    console.log(evDay)
+    
     return (
         <div className={styles.wrapper}>
             <h3 className={styles.title}>
@@ -10,7 +18,7 @@ const eventDay = props => {
             </h3>
             <time className={styles.time}>
                 <Calendar />
-                {props.eventDate}
+                {monthNames[evDay.getMonth()]} {evDay.getDate()}
             </time>
             <p className={styles.desc}>
                 {props.description}

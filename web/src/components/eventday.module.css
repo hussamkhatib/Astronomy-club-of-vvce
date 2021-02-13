@@ -1,4 +1,5 @@
 .container{
+    color: #1B1E3F;
     grid-column: 1/-1;
     padding: 1em;
     display: inline-grid;
